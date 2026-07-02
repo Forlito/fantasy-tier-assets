@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Manrope:wght@500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+.card{position:relative;width:1080px;height:1080px;overflow:hidden;color:#FAFAF7;
+  font-family:'Manrope',sans-serif;
+  background:
+    radial-gradient(900px 620px at 82% 6%, rgba(255,169,77,.24), transparent 60%),
+    radial-gradient(720px 720px at 10% 94%, rgba(40,215,198,.13), transparent 60%),
+    #06070A;}
+.card::before{content:"";position:absolute;right:-170px;top:-170px;width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle at 50% 50%, rgba(255,169,77,.38), rgba(255,146,43,.10) 46%, transparent 62%);z-index:0;}
+.top{position:absolute;top:54px;left:64px;right:64px;display:flex;align-items:center;justify-content:space-between;z-index:6;}
+.brand{display:flex;align-items:center;gap:15px;}
+.brand svg{height:46px;width:46px;}
+.brand svg path{fill:#FAFAF7;}
+.brand .wm{font-family:'Saira Condensed';font-weight:900;font-style:italic;text-transform:uppercase;font-size:30px;letter-spacing:.01em;}
+.tag{font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.12em;font-size:20px;
+  color:#06070A;background:#FFC53D;padding:9px 18px;border-radius:8px;}
+.player{position:absolute;right:0;top:0;bottom:0;width:60%;height:100%;object-fit:cover;object-position:center top;z-index:1;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 42%);mask-image:linear-gradient(90deg,transparent 0%,#000 42%);}
+.content{position:absolute;left:64px;bottom:158px;z-index:6;max-width:600px;}
+.kicker{font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.13em;color:#28D7C6;font-size:26px;margin-bottom:8px;min-height:1px;}
+.stat{font-family:'Saira Condensed';font-weight:900;font-style:italic;line-height:.80;font-size:196px;}
+.stat .u{font-size:60px;color:#FFA94D;margin-left:12px;}
+.headline{font-family:'Saira Condensed';font-weight:900;font-style:italic;text-transform:uppercase;font-size:72px;line-height:.92;margin-top:8px;}
+.subline{font-family:'Manrope';font-weight:600;color:#9AA0AD;font-size:26px;margin-top:16px;max-width:40ch;line-height:1.4;}
+.cta{position:absolute;left:64px;bottom:62px;z-index:6;display:inline-flex;align-items:center;gap:10px;
+  font-family:'Saira Condensed';font-weight:900;font-style:italic;text-transform:uppercase;font-size:26px;color:#06070A;
+  background:#FFC53D;padding:15px 30px;border-radius:12px;}
+.foot{position:absolute;right:64px;bottom:72px;z-index:6;text-align:right;
+  font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;font-size:24px;opacity:.92;}
+.foot small{display:block;font-family:'Manrope';font-weight:600;text-transform:none;color:#9AA0AD;font-size:16px;margin-top:2px;}
+/* ── DATA MODE (sin foto) ── */
+.card.mode-data .player{display:none;}
+.card.mode-data::after{content:"";position:absolute;right:-130px;bottom:-160px;width:600px;height:600px;border-radius:50%;
+  border:2px solid rgba(40,215,198,.16);z-index:0;}
+.card.mode-data .content{max-width:920px;bottom:190px;}
+.card.mode-data .stat{font-size:240px;}
+.card.mode-data .headline{font-size:88px;max-width:15ch;}
+.card.mode-data .subline{max-width:46ch;}
+</style></head>
+<body>
+<div class="card __MODECLASS__">
+  <div class="top">
+    <div class="brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 461 461">
+        <path d="M 230.5 149.1875 C 216.046875 149.1875 203.074219 154.453125 194.183594 162.808594 L 266.816406 162.808594 C 257.925781 154.453125 244.953125 149.1875 230.5 149.1875 "/>
+        <path d="M 312.730469 207.875 C 308.441406 194.074219 299.558594 183.25 288.941406 177.238281 L 310.507812 246.597656 C 315.847656 235.628906 317.023438 221.675781 312.730469 207.875 "/>
+        <path d="M 148.269531 207.875 C 143.976562 221.675781 145.152344 235.628906 150.492188 246.597656 L 172.054688 177.238281 C 161.441406 183.25 152.558594 194.074219 148.269531 207.875 "/>
+        <path d="M 178.738281 301.554688 C 190.546875 309.890625 204.183594 313.070312 216.261719 311.371094 L 156.917969 269.488281 C 159.367188 281.4375 166.929688 293.222656 178.738281 301.554688 "/>
+        <path d="M 282.261719 301.554688 C 294.070312 293.222656 301.632812 281.4375 304.082031 269.488281 L 244.734375 311.371094 C 256.816406 313.070312 270.453125 309.890625 282.261719 301.554688 "/>
+        <path d="M 273.738281 238.3125 L 281.429688 218.21875 L 221.75 218.839844 C 222.050781 218.089844 222.34375 217.351562 222.617188 216.652344 C 222.925781 215.867188 223.183594 215.164062 223.386719 214.546875 C 223.59375 213.933594 223.730469 213.558594 223.800781 213.417969 L 252.429688 213.417969 L 260.230469 193.410156 L 206.148438 193.410156 L 198.863281 211.984375 L 183.160156 252.722656 L 208.917969 252.722656 C 209.054688 252.378906 209.382812 251.542969 209.894531 250.207031 C 210.40625 248.875 211.023438 247.234375 211.742188 245.285156 C 212.445312 243.367188 213.238281 241.246094 214.109375 238.933594 L 241.414062 238.648438 L 227.089844 242.796875 L 213.601562 278.242188 L 239.359375 277.976562 L 254.34375 238.515625 Z M 273.738281 238.3125 "/>
+      </svg>
+      <span class="wm">Fantasy Tier</span>
+    </div>
+    <span class="tag">__EYEBROW__</span>
+  </div>
+  <img class="player" src="__PLAYERURL__" alt="">
+  <div class="content">
+    <div class="kicker">__KICKER__</div>
+    __STATBLOCK__
+    <div class="headline">__HEADLINE__</div>
+    <div class="subline">__SUBLINE__</div>
+  </div>
+  <div class="cta">Build your team →</div>
+  <div class="foot">Fantasy Tier<small>Premier League fantasy</small></div>
+</div>
+</body></html>
