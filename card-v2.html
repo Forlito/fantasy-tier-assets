@@ -9,8 +9,12 @@
     radial-gradient(900px 620px at 82% 6%, rgba(255,169,77,.24), transparent 60%),
     radial-gradient(720px 720px at 10% 94%, rgba(40,215,198,.13), transparent 60%),
     #06070A;}
-.card::before{content:"";position:absolute;right:-170px;top:-170px;width:640px;height:640px;border-radius:50%;
-  background:radial-gradient(circle at 50% 50%, rgba(255,169,77,.38), rgba(255,146,43,.10) 46%, transparent 62%);z-index:0;}
+/* full-bleed background photo (solo modo data) */
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;display:none;}
+.scrim{position:absolute;inset:0;z-index:1;display:none;}
+/* sun ring */
+.ring{content:"";position:absolute;right:-170px;top:-170px;width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle at 50% 50%, rgba(255,169,77,.42), rgba(255,146,43,.12) 46%, transparent 62%);z-index:2;pointer-events:none;}
 .top{position:absolute;top:54px;left:64px;right:64px;display:flex;align-items:center;justify-content:space-between;z-index:6;}
 .brand{display:flex;align-items:center;gap:15px;}
 .brand svg{height:46px;width:46px;}
@@ -18,31 +22,36 @@
 .brand .wm{font-family:'Saira Condensed';font-weight:900;font-style:italic;text-transform:uppercase;font-size:30px;letter-spacing:.01em;}
 .tag{font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.12em;font-size:20px;
   color:#06070A;background:#FFC53D;padding:9px 18px;border-radius:8px;}
-.player{position:absolute;right:0;top:0;bottom:0;width:60%;height:100%;object-fit:cover;object-position:center top;z-index:1;
+.player{position:absolute;right:0;top:0;bottom:0;width:60%;height:100%;object-fit:cover;object-position:center top;z-index:3;
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 42%);mask-image:linear-gradient(90deg,transparent 0%,#000 42%);}
 .content{position:absolute;left:64px;bottom:158px;z-index:6;max-width:600px;}
 .kicker{font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.13em;color:#28D7C6;font-size:26px;margin-bottom:8px;min-height:1px;}
-.stat{font-family:'Saira Condensed';font-weight:900;font-style:italic;line-height:.80;font-size:196px;}
+.stat{font-family:'Saira Condensed';font-weight:900;font-style:italic;line-height:.80;font-size:196px;text-shadow:0 6px 40px rgba(0,0,0,.45);}
 .stat .u{font-size:60px;color:#FFA94D;margin-left:12px;}
-.headline{font-family:'Saira Condensed';font-weight:900;font-style:italic;text-transform:uppercase;font-size:72px;line-height:.92;margin-top:8px;}
-.subline{font-family:'Manrope';font-weight:600;color:#9AA0AD;font-size:26px;margin-top:16px;max-width:40ch;line-height:1.4;}
+.headline{font-family:'Saira Condensed';font-weight:900;font-style:italic;text-transform:uppercase;font-size:72px;line-height:.92;margin-top:8px;text-shadow:0 4px 30px rgba(0,0,0,.5);}
+.subline{font-family:'Manrope';font-weight:600;color:#C7CBD3;font-size:26px;margin-top:16px;max-width:40ch;line-height:1.4;}
 .cta{position:absolute;left:64px;bottom:62px;z-index:6;display:inline-flex;align-items:center;gap:10px;
   font-family:'Saira Condensed';font-weight:900;font-style:italic;text-transform:uppercase;font-size:26px;color:#06070A;
   background:#FFC53D;padding:15px 30px;border-radius:12px;}
 .foot{position:absolute;right:64px;bottom:72px;z-index:6;text-align:right;
   font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;font-size:24px;opacity:.92;}
 .foot small{display:block;font-family:'Manrope';font-weight:600;text-transform:none;color:#9AA0AD;font-size:16px;margin-top:2px;}
-/* ── DATA MODE (sin foto) ── */
+/* ── DATA MODE (foto de estadio de fondo) ── */
+.card.mode-data .bg{display:block;}
+.card.mode-data .scrim{display:block;background:
+  linear-gradient(180deg, rgba(6,7,10,.45) 0%, rgba(6,7,10,.80) 60%, rgba(6,7,10,.97) 100%),
+  linear-gradient(90deg, rgba(6,7,10,.85) 0%, rgba(6,7,10,.30) 55%, rgba(6,7,10,.10) 100%);}
 .card.mode-data .player{display:none;}
-.card.mode-data::after{content:"";position:absolute;right:-130px;bottom:-160px;width:600px;height:600px;border-radius:50%;
-  border:2px solid rgba(40,215,198,.16);z-index:0;}
 .card.mode-data .content{max-width:920px;bottom:190px;}
-.card.mode-data .stat{font-size:240px;}
-.card.mode-data .headline{font-size:88px;max-width:15ch;}
-.card.mode-data .subline{max-width:46ch;}
+.card.mode-data .stat{font-size:236px;}
+.card.mode-data .headline{font-size:86px;max-width:15ch;}
+.card.mode-data .subline{max-width:46ch;color:#D5D8DE;}
 </style></head>
 <body>
 <div class="card __MODECLASS__">
+  <img class="bg" src="__BGURL__" alt="">
+  <div class="scrim"></div>
+  <div class="ring"></div>
   <div class="top">
     <div class="brand">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 461 461">
