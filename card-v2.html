@@ -22,6 +22,9 @@
 /* content blocks (solo se muestra el del layout activo) */
 .content{position:absolute;left:64px;bottom:150px;z-index:6;max-width:600px;display:none;}
 .card.layout-stat  .c-stat  {display:block;}
+.card.layout-money .c-stat  {display:block;}
+.card.layout-money .stat{color:#FFC53D;}
+.card.layout-money .stat .u{color:#FAFAF7;}
 .card.layout-versus .c-versus{display:block;max-width:900px;}
 .card.layout-ranking .c-ranking{display:block;max-width:820px;}
 .card.layout-fact  .c-fact  {display:block;max-width:760px;}
@@ -53,8 +56,8 @@
   linear-gradient(180deg, rgba(6,7,10,.45) 0%, rgba(6,7,10,.80) 60%, rgba(6,7,10,.97) 100%),
   linear-gradient(90deg, rgba(6,7,10,.85) 0%, rgba(6,7,10,.30) 55%, rgba(6,7,10,.10) 100%);}
 .card.mode-data .player{display:none;}
-.card.mode-data.layout-stat .stat{font-size:236px;}
-.card.mode-data.layout-stat .headline{font-size:86px;max-width:15ch;}
+.card.mode-data.layout-stat .stat,.card.mode-data.layout-money .stat{font-size:236px;}
+.card.mode-data.layout-stat .headline,.card.mode-data.layout-money .headline{font-size:86px;max-width:15ch;}
 </style></head>
 <body>
 <div class="card __MODECLASS__ __LAYOUT__">
