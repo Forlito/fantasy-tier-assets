@@ -28,6 +28,7 @@
 .card.layout-versus .c-versus{display:block;max-width:900px;}
 .card.layout-ranking .c-ranking{display:block;max-width:820px;}
 .card.layout-fact  .c-fact  {display:block;max-width:760px;}
+.card.layout-news  .c-news  {display:block;max-width:820px;}
 .kicker{font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.13em;color:#28D7C6;font-size:26px;margin-bottom:10px;min-height:1px;}
 .stat{font-family:'Saira Condensed';font-weight:900;font-style:italic;line-height:.80;font-size:196px;text-shadow:0 6px 40px rgba(0,0,0,.45);}
 .stat .u{font-size:60px;color:#FFA94D;margin-left:12px;}
@@ -45,6 +46,9 @@
 .rval{font-family:'Saira Condensed';font-weight:900;font-style:italic;color:#28D7C6;font-size:50px;}
 /* fact */
 .headline.big{font-size:112px;line-height:.90;}
+/* news */
+.card.layout-news .headline{font-size:82px;}
+.source{font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.05em;color:#FFA94D;font-size:24px;margin-top:22px;}
 /* CTA + footer */
 .cta{position:absolute;left:64px;bottom:62px;z-index:6;display:inline-flex;align-items:center;gap:10px;
   font-family:'Saira Condensed';font-weight:900;font-style:italic;text-transform:uppercase;font-size:26px;color:#06070A;background:#FFC53D;padding:15px 30px;border-radius:12px;}
@@ -104,6 +108,14 @@
     <div class="kicker">__KICKER__</div>
     <div class="headline big">__HEADLINE__</div>
     <div class="subline">__SUBLINE__</div>
+  </div>
+
+  <div class="content c-news">
+    <div class="kicker">__KICKER__</div>
+    __STATBLOCK__
+    <div class="headline">__HEADLINE__</div>
+    <div class="subline">__SUBLINE__</div>
+    <div class="source">__SOURCE__</div>
   </div>
 
   <div class="cta">Build your team →</div>
